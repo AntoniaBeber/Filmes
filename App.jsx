@@ -5,26 +5,30 @@ import {personagens} from './lista'
 
 import './App.css'
 
-function ListarPersonagens(){
-  const nomeSobrenome = 
-  personagens.filter(personagem=> {
-  let nomepersonagem = personagem.nome;
-  var arrayNomes = nomepersonagem.split(" ");
-  if()
 
-  })
-}
 
 
 function App() {
   return (
+  
+  
+  <div>
+  
+    {
+  personagens
+  .filter((personagem)=>{
+    if(personagem.nome.includes('Redfield')){
+      return true;
+    }
+  })
+  .map(personagem=>(
     <div>
-      <h1>Membros Familia Redfield</h1>
-      { personagens.map(personagem=> (
-        <li>
-         {personagens.nome}
-        </li>
-      ))}
+      <h4>{personagem.nome}</h4>
+        <img src= {personagem.url} alt="" srcset="" />
+      
+    </div>
+  ))
+}
       
       
       
@@ -35,3 +39,4 @@ function App() {
 }
 
 export default App
+
